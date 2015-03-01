@@ -36,7 +36,7 @@ app.get('/echo',function(req,res) {
 
 	var twiml = new twilio.TwimlResponse();
 
-	twiml.say("Hello to you {" + _from +"}!  You said '" + _body + "'");
+	twiml.sms("Hello to you {" + _from +"}!  You said '" + _body + "'");
 
 	res.set('Content-Type', 'text/xml');
 	res.send(200,twiml.toString());
