@@ -34,6 +34,9 @@ app.get('/echo',function(req,res) {
 	var _to = req.param('To');
 	var _body = req.param('Body');
 
+	res.send("Hello to you {" + _from +"}!  You said '" + _body + "'");
+
+/*
 	client.messages.create({
 		to: _from,
 		from: _to,
@@ -42,6 +45,7 @@ app.get('/echo',function(req,res) {
 		console.log(message.sid);
 	});
 	res.send(201);
+	*/
 });
 
 http.createServer(app).listen(app.get('port'), function(){
