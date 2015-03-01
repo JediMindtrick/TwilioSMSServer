@@ -34,7 +34,15 @@ app.get('/echo',function(req,res) {
 	var _to = req.param('To');
 	var _body = req.param('Body');
 
-	res.status(201).send("Hello to you {" + _from +"}!  You said '" + _body + "'");
+	var twiml = new twilio.TwimlResponse();
+
+	twiml.say("Hello to you {" + _from +"}!  You said '" + _body + "'");
+
+	res.type('text/xml');
+	res.send(twiml.toString());
+
+
+//	res.status(201).send("Hello to you {" + _from +"}!  You said '" + _body + "'");
 
 /*
 	client.messages.create({
