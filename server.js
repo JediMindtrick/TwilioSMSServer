@@ -38,7 +38,8 @@ app.get('/echo',function(req,res) {
 
 	twiml.say("Hello to you {" + _from +"}!  You said '" + _body + "'");
 
-	res.send(twiml.toString());
+	res.set('Content-Type', 'text/xml');
+	res.send(200,twiml.toString());
 
 
 //	res.status(201).send("Hello to you {" + _from +"}!  You said '" + _body + "'");
