@@ -40,20 +40,6 @@ app.get('/echo',function(req,res) {
 
 	res.set('Content-Type', 'text/xml');
 	res.send(200,twiml.toString());
-
-
-//	res.status(201).send("Hello to you {" + _from +"}!  You said '" + _body + "'");
-
-/*
-	client.messages.create({
-		to: _from,
-		from: _to,
-		body: "Hello to you {" + _from +"}!  You said '" + _body + "'",
-	}, function(err, message) {
-		console.log(message.sid);
-	});
-	res.send(201);
-	*/
 });
 
 http.createServer(app).listen(app.get('port'), function(){
